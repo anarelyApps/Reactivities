@@ -1,0 +1,72 @@
+<h1>Angular</h1>
+<courses></courses>
+
+<div [hidden]="courses.length == 0">
+    List of Courses
+    <button (click)="onAdd()">Add</button>
+    <li *ngFor="let course of courses">
+        {{course}}
+        <button (click)="onChange(course)">Update</button>
+        <button (click)="onRemove(course)">Remove</button>
+    </li>
+</div>
+<div [hidden]="courses.length > 0">
+   no courses
+</div>
+
+<div *ngIf="courses.length > 0; else noCourses">
+List of Courses
+</div>
+<div *ngIf="courses.length > 0; then coursesList else noCourses"> </div>
+<ng-template #coursesList>
+ Courses
+</ng-template>
+<ng-template #noCourses>
+    No Courses yet
+</ng-template>
+
+
+
+<favourite [is-Favourite]="post.isFavourite" [isFavorite]="post.isFavourite" (change)="onFavouriteChanged($event)" />
+
+<bootstrap-panel>
+    <ng-container class="heading"></ng-container>
+    <div class="body">
+        <h2></h2>
+        <p> Some content here...</p>
+    </div>
+</bootstrap-panel>
+
+<like [isLiked]="tweet.isLiked" [likesCount]="tweet.likesCount"></like>
+
+<ul class="nav nav-pills">
+ <li [class.active]="viewMode == 'map'"><a (click)="changeViewModel('map')">Map view</a></li>
+ <li [class.active]="viewMode == 'list'"><a (click)="changeViewModel('list')"></a></li>
+</ul>
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">Map view content</div>
+    <div *ngSwitchCase="'list'">List view content</div>
+    <div *ngSwitchDefault>Otherwise</div>
+</div>
+
+<button
+[style.background-color]="canSave? 'blue':'gray'"
+[style.color]="canSave? 'white': 'black'"
+[style.fontWeight]="canSave ? 'bold':'normal'"
+[ngStyle] = "{
+    'backgroundColor':canSave?'blue':'gray',
+    'color':canSave?  'white': 'black',
+    'fontWeight':canSave ? 'bold':'normal'
+}"
+>Save</button>
+
+<input type="text"  [appInputFormat]="'uppercase'"/>
+
+
+<contact-form></contact-form>
+
+<signup-form></signup-form>
+
+<new-course-form></new-course-form>
+
+<posts></posts>

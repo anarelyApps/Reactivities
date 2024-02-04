@@ -1,0 +1,12 @@
+.liked-colour{
+    color:#ccc;
+}
+.unliked-colour {
+    color:deeppink;
+}
+
+:host, span {
+    width:100px;
+    height:100px;
+    display:block;
+}

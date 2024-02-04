@@ -1,0 +1,18 @@
+/*@import "~bootstrap/dist/css/bootsrap.css";*/
+
+:host {
+    background-color: thistle;
+    width: 100px;
+    height: 100px;
+    display: block;
+}
+
+span {
+    color: #0dcaf0;
+    display: block !important;
+    width: 100%;
+    height: 100%;
+}
+.glyphicon {
+    color:blue !important;
+}
